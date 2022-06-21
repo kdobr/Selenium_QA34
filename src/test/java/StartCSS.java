@@ -63,7 +63,7 @@ public class StartCSS {
 
         //find and push reg button 2 ways
         registrationButton = wd.findElement(registrationButtonSelector2);
-      //  registrationButton = wd.findElement(registrationButtonSelector);
+        //  registrationButton = wd.findElement(registrationButtonSelector);
         registrationButton.click();
 
         //wait until "contact page" tab appear before closing browser
