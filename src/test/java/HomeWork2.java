@@ -20,26 +20,26 @@ public class HomeWork2 {
         wd.findElement(By.cssSelector("a[href]"));
         wd.findElement(By.xpath("//a[@href]"));
         wd.findElement(By.cssSelector("[href ^='/ho']"));
-        wd.findElement(By.xpath("//*[contains(@href, '/ho')]"));
+        wd.findElement(By.xpath("//*[starts-with(@href, '/ho')]"));
         wd.findElement(By.cssSelector("div.focus"));
         wd.findElement(By.xpath("//div[@class='focus']"));
         wd.findElement(By.cssSelector("input[type='text']"));
         wd.findElement(By.xpath("//input[@type='text']"));
         wd.findElement(By.cssSelector("div #host"));
-        wd.findElement(By.xpath("//div//[@id='text']"));
-        wd.findElement(By.cssSelector("table#contry tr:nt-child(3)) td:last-child"));
-        wd.findElement(By.xpath("//table[@id='country']//child::tr[3]//child::td[last()]"));
+        wd.findElement(By.xpath("//div//[@id='host']"));
+        wd.findElement(By.cssSelector("table#country tr:nt-child(3)) td:last-child"));
+        wd.findElement(By.xpath("//table[@id='country']//tr[(count(preceding-sibling::*))=2]//td[not(following-sibling::*)]"));
         wd.findElement(By.cssSelector("div#idName li:first-child"));
-        wd.findElement(By.xpath("//div[@id='idName']//child::li[1]"));
+        wd.findElement(By.xpath("//div[@id='idName']//li[not(preceding-sibling::*)]"));
         wd.findElement(By.cssSelector("div#sort>div:nth-child(2)"));
-        wd.findElement(By.xpath("//div[@id='sort']/child::*[2]"));
+        wd.findElement(By.xpath("//div[@id='sort']/div[count(preceding-sibling::*) = 1]"));
     }
 
 
     @Test
     public void fromXPathToCss(){
         wd.findElement(By.xpath("//*[@id='host"));
-        wd.findElement(By.cssSelector("*#host"));
+        wd.findElement(By.cssSelector("#host"));
 
         wd.findElement(By.xpath("//button[@class='submit']"));
         wd.findElement(By.cssSelector("button.submit"));
@@ -54,7 +54,7 @@ public class HomeWork2 {
         wd.findElement(By.cssSelector("div[class*='st']"));
 
         wd.findElement(By.xpath("//div[@id=’idName’]//h1[last()]"));
-        wd.findElement(By.cssSelector("div#isName h1:last-of-type"));
+        wd.findElement(By.cssSelector("div#idName h1:last-of-type"));
 
         wd.findElement(By.xpath("//table[@id]//tr[last()]"));
         wd.findElement(By.cssSelector("table[@id] tr:last-of-type"));
